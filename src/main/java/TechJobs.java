@@ -136,11 +136,15 @@ public class TechJobs {
             System.out.println("No Results");
         } else {
            for (HashMap<String, String> selectedJob: someJobs){
+
+               //print ***** at top and bottom of each
                System.out.println("*****");
-               //nest it
+               //nest it for each entry set print the key and value
                for (Map.Entry<String, String> jobInfo: selectedJob.entrySet()){
                    System.out.println((jobInfo.getKey() + ":" + jobInfo.getValue()));
                }
+               //print ***** at top and bottom of each
+               System.out.println("*****\n");
 
            }
 
