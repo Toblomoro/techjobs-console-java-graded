@@ -28,7 +28,8 @@ public class TechJobs {
         actionChoices.put("search", "Search");
         actionChoices.put("list", "List");
 //first header and printed line
-        System.out.println("Welcome to LaunchCode's TechJobs App!\n");
+        System.out.println("Welcome to LaunchCode's TechJobs App!");
+        System.out.println();
 
         // Allow the user to search until they manually quit
         while (true) {
@@ -46,8 +47,8 @@ public class TechJobs {
                 } else {
 //otherwise find the column choice and print
                     ArrayList<String> results = JobData.findAll(columnChoice);
-
-                    System.out.println("\n*** All " + columnChoices.get(columnChoice) + " Values ***");
+                    System.out.println();
+                    System.out.println("*** All " + columnChoices.get(columnChoice) + " Values ***");
 
                     // Print list of skills, employers, etc
                     for (String item : results) {
@@ -59,10 +60,12 @@ public class TechJobs {
 
                 // How does the user want to search (e.g. by skill or employer)
                 // if search is chosen display
-                String searchField = getUserSelection("\nSearch by:", columnChoices);
+                System.out.println();
+                String searchField = getUserSelection("Search by:", columnChoices);
 
                 // What is their search term? with search you can input what you would like in the previous selection
-                System.out.println("\nSearch term:");
+                System.out.println();
+                System.out.println("Search term:");
                 String searchTerm = in.nextLine();
 // if user selection is all then searches the csv for all occourances
                 if (searchField.equals("all")) {
@@ -139,13 +142,15 @@ public class TechJobs {
            for (HashMap<String, String> selectedJob: someJobs){
 
                //print ***** at top and bottom of each
-               System.out.println("\n*****");
+               System.out.println();
+               System.out.println("*****");
                //nest it for each entry set print the key and value
                for (Map.Entry<String, String> jobInfo: selectedJob.entrySet()){
-                   System.out.println((jobInfo.getKey() + ":" + jobInfo.getValue()));
+                   System.out.println((jobInfo.getKey() + ": " + jobInfo.getValue()));
                }
                //print ***** at top and bottom of each
                System.out.println("*****");
+               System.out.println();
 
            }
 
