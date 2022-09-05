@@ -131,9 +131,23 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        if (someJobs.size() < 1) {
 
-        //Iterate over the ArrayList of hashmaps(each job is a hash map as seen above)
+            System.out.println("No Results");
+        } else {
+           for (HashMap<String, String> selectedJob: someJobs){
+               System.out.println("*****");
+               //nest it
+               for (Map.Entry<String, String> jobInfo: selectedJob.entrySet()){
+                   System.out.println((jobInfo.getKey() + ":" + jobInfo.getValue()));
+               }
 
-        System.out.println("printJobs is not implemented yet");
+           }
+
+            }
+
+        //Iterate over the ArrayList of hashmaps(each somejob is a hash map as seen above) needs to return no results if there is no results, ie if it has 0 length(.size()) DO NOT use individual identifiers use .entryset to call the set of entrys.
+
+
     }
 }
