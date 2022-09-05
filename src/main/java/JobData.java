@@ -97,9 +97,27 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
+        //make array of hash map to store job entry(becasue it is a hasmap), then iterate through columns and jobs entries
+        //casesensitive, create a variable with the upper/lowercase
+
+        String caseSensitive = value.toUpperCase();
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+        //loop through columns ato find if it contains our caseSensitive
+
+
+        for (HashMap<String, String> job : allJobs) {
+            for (String column : job.values()){
+                if (column.toUpperCase().contains(caseSensitive)){
+                    jobs.add(job);
+
+                }
+            }
+
+
+        }
 
         // TODO - implement this method
-        return null;
+        return jobs;
     }
 
     /**
