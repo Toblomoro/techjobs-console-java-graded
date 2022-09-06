@@ -70,17 +70,16 @@ public class TechJobs {
 // if user selection is all then searches the csv for all occourances
                 if (searchField.equals("all")) {
                         //call find by value in the print jobs to print the searched term that is value in the findbyvalue method
-                        printJobs(JobData.findByValue(searchTerm));
-                    }
-               if (searchField.equals("core competency")) {
+                        printJobs(JobData.findByValue(searchTerm));}
+               /*if (searchField.equals("core competency")) {
                     printJobs(JobData.findByValue(searchTerm)); }
                 if (searchField.equals("position type")) {
                     printJobs(JobData.findByValue(searchTerm)); }
                 if (searchField.equals("location")) {
                     printJobs(JobData.findByValue(searchTerm)); }
                 if (searchField.equals("employer")) {
-                    printJobs(JobData.findByValue(searchTerm)); }
-                    else { // other wiseuse method in jobdata to find the search term in the other search fields
+                    printJobs(JobData.findByValue(searchTerm)); }*/
+                    else { // other wise use method in jobdata to find the search term in the other search fields
                         printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                     }
 
@@ -162,6 +161,7 @@ public class TechJobs {
                //print ***** at top and bottom of each
                System.out.println("*****");
                System.out.println();
+
 
            }
 
