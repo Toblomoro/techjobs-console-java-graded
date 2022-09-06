@@ -72,8 +72,8 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 // if user selection is all then searches the csv for all occourances
                 if (searchField.equals("all")) {
-                        //call find by value in the print jobs to print the searched term that is value in the findbyvalue method
-                        printJobs(JobData.findByValue(searchTerm));}
+                    //call find by value in the print jobs to print the searched term that is value in the findbyvalue method
+                    printJobs(JobData.findByValue(searchTerm));}
                /*if (searchField.equals("core competency")) {
                     printJobs(JobData.findByValue(searchTerm)); }
                 if (searchField.equals("position type")) {
@@ -82,9 +82,9 @@ public class TechJobs {
                     printJobs(JobData.findByValue(searchTerm)); }
                 if (searchField.equals("employer")) {
                     printJobs(JobData.findByValue(searchTerm)); }*/
-                    else { // other wise use method in jobdata to find the search term in the other search fields
-                        printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
-                    }
+                else { // other wise use method in jobdata to find the search term in the other search fields
+                    printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
+                }
 
             }
         }
@@ -151,23 +151,23 @@ public class TechJobs {
 
             System.out.println("No Results");
 
-        } else {
-           for (HashMap<String, String> selectedJob: someJobs){
+        } else {  System.out.println();
+            for (HashMap<String, String> selectedJob: someJobs){
 
-               //print ***** at top and bottom of each
-               System.out.println();
-               System.out.println("*****");
-               //nest it for each entry set print the key and value
-               for (Map.Entry<String, String> jobInfo: selectedJob.entrySet()){
-                   System.out.println((jobInfo.getKey() + ": " + jobInfo.getValue()));
-               }
-               //print ***** at top and bottom of each
-               System.out.println("*****");
-               System.out.println();
- }
+                //print ***** at top and bottom of each
 
-
+                System.out.println("*****");
+                //nest it for each entry set print the key and value
+                for (Map.Entry<String, String> jobInfo: selectedJob.entrySet()){
+                    System.out.println((jobInfo.getKey() + ": " + jobInfo.getValue()));
+                }
+                //print ***** at top and bottom of each
+                System.out.println("*****");
+                System.out.println();
             }
+
+
+        }
 
         //Iterate over the ArrayList of hashmaps(each somejob is a hash map as seen above) needs to return no results if there is no results, ie if it has 0 length(.size()) DO NOT use individual identifiers use .entryset to call the set of entrys.
 
