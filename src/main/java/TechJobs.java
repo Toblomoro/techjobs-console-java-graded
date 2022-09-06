@@ -69,6 +69,7 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 // if user selection is all then searches the csv for all occourances
                 if (searchField.equals("all")) {
+                    //call find by value in the print jobs to print the searched term that is value in the findbyvalue method
                     printJobs(JobData.findByValue(searchTerm));
                 } else { // other wiseuse method in jobdata to find the search term in the search field
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));

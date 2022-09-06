@@ -5,10 +5,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -97,24 +94,29 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
-        //make array of hash map to store job entry(becasue it is a hasmap), then iterate through columns and jobs entries
-        //casesensitive, create a variable with the upper/lowercase
+        //make array of hash map to store job entry, then iterate through columns and jobs entries
+        //casesensitive, create a variable with the upper/lowercase?
 
-        String caseSensitive = value.toUpperCase();
+
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-        //loop through columns ato find if it contains our caseSensitive
+        //loop cycles through results
 
 
-        for (HashMap<String, String> job : allJobs) {
-            for (String column : job.values()){
-                if (column.toUpperCase().contains(caseSensitive)){
-                    jobs.add(job);
+        for (HashMap<String, String> entries : allJobs) {
+            for (Map.Entry<String, String> keyValue : entries.entrySet()) {
+                //for entry im map becomes keyValue
+                //get keyValue convert to lowercase
+                String word = keyValue.getValue().toLowerCase();
+
+                //if lowercase word contains the entered value (searchTerm) then add it to the entries
+                if (word.toLowerCase().contains(value.toLowerCase())) {
+                    jobs.add(entries);
+
+
+              }
 
                 }
             }
-
-
-        }
 
         // TODO - implement this method
         return jobs;
