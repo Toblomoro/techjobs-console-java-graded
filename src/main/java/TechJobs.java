@@ -31,9 +31,12 @@ public class TechJobs {
         System.out.println("Welcome to LaunchCode's TechJobs App!");
         System.out.println();
 
+
+
         // Allow the user to search until they manually quit
         while (true) {
 //created header
+
             String actionChoice = getUserSelection("View jobs by (type 'x' to quit):", actionChoices);
 
             if (actionChoice == null) {
@@ -161,9 +164,7 @@ public class TechJobs {
                //print ***** at top and bottom of each
                System.out.println("*****");
                System.out.println();
-
-
-           }
+ }
 
 
             }
